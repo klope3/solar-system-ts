@@ -1,4 +1,4 @@
-export const data = {
+export const data: AllData = {
   planets: [
     {
       id: "uranus",
@@ -343,4 +343,37 @@ export const data = {
     { name: "Arrokoth", discoveryYear: 2014, orbitalPeriod: 107847 },
     { name: "101955 Bennu", discoveryYear: 1999, orbitalPeriod: 436.604 },
   ],
+};
+
+export type MassData = {
+  massValue: number;
+  massExponent: number;
+};
+
+export type VolData = {
+  volValue: number;
+  volExponent: number;
+};
+
+export type Planet = {
+  id: string;
+  name: string;
+  isPlanet: boolean;
+  mass: MassData;
+  vol: VolData;
+  gravity: number;
+  avgTemp: number;
+  moonsCount?: number;
+  moons?: string[];
+};
+
+export type Asteroid = {
+  name: string;
+  discoveryYear: number;
+  orbitalPeriod: number;
+};
+
+export type AllData = {
+  planets: Planet[];
+  asteroids: Asteroid[];
 };
